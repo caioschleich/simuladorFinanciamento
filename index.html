@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador de Financiamento 1.0</title>
+    <link rel="stylesheet" href="estilofin.css" />
+  </head>
+  <body>
+    <div id="divBody">
+      <header id="headerPage">
+        <h1 class="h1header">Simulador de Financiamento</h1>
+        <h3 class="h3header">Sistema de Amortização Constante (SAC)</h3>
+      </header>
+      <main>
+        <div class="divGeral">
+          <div class="divForm">
+            <input
+              id="textoValor"
+              type="text"
+              placeholder="Valor a ser financiado"
+            /><br />
+            <input
+              id="textoEntrada"
+              type="text"
+              placeholder="Valor de entrada"
+            /><br />
+            <input
+              id="textoTaxaJuros"
+              type="text"
+              placeholder="Taxa de juros"
+            /><br />
+            <input
+              id="textoPrazo"
+              type="text"
+              placeholder="Prazo (em meses)"
+            /><br />
+            <button id="botaoCalcular">Calcular</button>
+            <div id="divCarencia">
+              <span>Com carência?</span
+              ><input id="comCarencia" type="checkbox" /><br />
+              <select id="listaSuspensa" hidden>
+                <option value="2">2 meses</option>
+                <option value="3">3 meses</option>
+                <option value="4">4 meses</option>
+              </select>
+            </div>
+          </div>
+          <aside class="aside">
+            <div class="card">
+              <p class="pmain">
+                Simule aqui o seu financiamento, preenchendo inicialmente o
+                valor que deseja financiar, e em seguida o valor de entrada,
+                taxa de juros e o prazo de pagamento do financiamento.
+              </p>
+            </div>
+            <div class="card">
+              <p class="pmain">
+                Se houver carência, este simulador também poderá ajudar a
+                calcular os valores finais com base na carência selecionada para
+                os primeiros meses do financiamento.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </main>
+      <div class="tabela">
+        <table id="tabelaCalculo" hidden>
+          <thead>
+            <tr>
+              <th>No. Parcela</th>
+              <th>Valor da Parcela</th>
+              <th>Amortização</th>
+              <th>Juros</th>
+              <th>Saldo devedor</th>
+            </tr>
+          </thead>
+          <tbody id="corpoTabela"></tbody>
+        </table>
+      </div>
+    </div>
+    <footer>
+      <p>
+        Simulador de Financiamento 1.0 - por:
+        <a href="https://github.com/caioschleich">caio.schleich</a>
+      </p>
+    </footer>
+    <script type="module" src="scriptfin.js"></script>
+  </body>
+</html>
